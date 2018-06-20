@@ -1,0 +1,110 @@
+/* 갤러리 */
+.gallery{
+  width:100%;
+  margin:0 auto;
+}
+
+.view{
+  position:relative;
+  height:100vh; 
+  overflow: hidden; 
+  top:0%;
+}
+
+.view-item{
+  display: block;
+  width:100%;
+  position:absolute;
+  transform: translateX(100%);
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.imgs{
+  width:100%;
+  transition:filter 1000ms 2000ms ease-in-out;
+}
+.imgs.filterEffect{
+  filter:blur(2px) sepia(50%) grayscale(50%);
+}
+#image1.selected,#image2.selected,#image3.selected,#image4.selected,#image5.selected{
+  transform: translateX(0);
+}
+#image1,#image2,#image3,#image4,#image5{
+  transform: translateX(-100%);
+}
+/* 텍스트 컨테이너 */
+.container{
+  position: absolute;
+  display: block;
+  margin:0 auto;
+  padding:0;
+  top:50%;
+  left:50%;
+  color:#fff;
+  font-size: 1em;
+  line-height: 22px;
+  text-align: center;
+  text-shadow: rgb(46, 46, 46,1) 1px 1px 1px;
+  transform:translate(-50%,-50%);
+  z-index: 9999;
+}
+.side-text{
+  top:22%;
+  font-size: 3.5em;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color:yellow;
+}
+.view-item.selected{
+  transform: translateX(0);
+}
+
+/* 버튼 */
+.list{
+  position: absolute;
+  display: flex;
+  width:70%;
+  margin:0;
+  padding:0;
+  top:8%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.list li{
+  display:inline-block;
+  flex:1;
+  vertical-align:top;
+}
+
+.list li a{
+  display:block;
+  position:relative;
+}
+.list li.selected a{
+  cursor:default;
+}
+
+.list li.selected a::after{
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:2px solid #000;
+  box-sizing:border-box;
+}
+.circle{
+  color:#fff;
+  padding-bottom: 5px;
+  border-bottom:2px solid #000;
+  transition:width 400ms  ease-in-out;
+}
+
+.circle.selected{
+  border-bottom:2px solid #fff;
+}
+
